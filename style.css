@@ -77,8 +77,7 @@ img {
 
   background-color: var(--desaturated-blue);
   text-align: center;
-  width: 80vw;
-  max-width: 400px;
+  width: min(400px, 80vw);
 }
 
 .card-image{
@@ -145,8 +144,8 @@ img {
   .card {
     text-align: left;
     margin: 0 auto;
-    max-width: 900px;
     max-height: 380px;
+    width: min(900px, 80vw);
   }
 
   .card-content {
