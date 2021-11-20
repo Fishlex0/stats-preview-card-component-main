@@ -1,0 +1,126 @@
+:root {
+  /* COLORS */
+  --dark-blue:  hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --white:  hsl(0, 0%, 100%);
+  --main-paragraph:  hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+
+  /* TYPOGRAPHY */
+  --main-font-size: 15px;
+  --inter: 'Inter', sans-serif;
+  --luxend: 'Lexend Deca', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+  font-family: var(--inter);
+
+  line-height: 1.5;
+
+  height: 100%;
+}
+
+body {
+  background-color: var(--dark-blue);
+  color: var(--main-paragraph);
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1.5rem;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.attribution {
+  color: var(--white);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+img {
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    " image "
+    " title "
+    " description "
+    " stats ";
+
+  border-radius: .5rem;
+  overflow: hidden;
+
+  background-color: var(--desaturated-blue);
+  text-align: center;
+}
+
+.card-image { grid-area: image; }
+.card-title { grid-area: title; }
+.card-description { grid-area: description; }
+.stats { grid-area: stats; }
+
+.card-image{
+  position: relative;
+  display: inherit;
+}
+
+.card-image:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsl(277, 81.5%, 33.9%);
+  top: 0;
+  content: "";
+  opacity: 0.5;
+}
+
+.card-title {
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.card-content {
+  padding: 2em;
+}
+
+.card-content > * {
+  margin-bottom: .5em;
+}
+
+.stats {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.stats div > p:first-child {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.stats div > p:not(:first-child) {
+  font-size: 0.9em;
+  opacity: 0.5;
+  font-family: var(--luxend);
+  text-transform: uppercase;
+}
